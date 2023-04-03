@@ -89,7 +89,7 @@ VALUES (1,60056,'Cien años de soledad',140),
 (4,60089,'la chica del tren',18),
 (5,60033,'Romeo y Julieta',50)
 
-drop table libro
+
 
 INSERT INTO pedido_libro
 (id,id_pedido,id_libro,ltitulo,cantidad)
@@ -100,11 +100,8 @@ VALUES (001,900609,60056,'Cien años de soledad',1),
 (005,900679,60023,'Harry Potter',1);
 
 
-
-
-SELECT COUNT(*) FROM pedidos WHERE 
-
 -- libro más vendido en el mes de abril
+
 SELECT ltitulo, SUM(cantidad) as cant_venta_libro
 FROM pedido_libro t1
 JOIN pedidos t2 ON t1.id_pedido = t2.id
@@ -118,7 +115,7 @@ LIMIT 1
 SELECT AVG(precio) FROM libro
 
 
---Ejercicio challenge(Lo mas se pudo, se genera el ERROR:  el valor es demasiado largo para el tipo character(1)
+--Ejercicio challenge(Fue lo mas que se pudo, se genero el ERROR:  el valor es demasiado largo para el tipo character(1)
 CREATE OR REPLACE FUNCTION vtotal_iva(
 	idd integer,
 	precio numeric,
